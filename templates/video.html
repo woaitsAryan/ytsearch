@@ -18,9 +18,9 @@
         <div id="results">
             {% for response in responses %}
                 <div class="video">
-                    <a href="video1.html"><img src="{{response['videoinfo']['thumbnail']}}" alt="Video Thumbnail"></a>
-                    <div class="details">   
-                        <h2><a href="video1.html">{{ response['videoinfo']['title'] }}</a></h2>
+                    <a href="https://youtube.com/watch?v={{response['videoinfo']['video_id']}}"><img src="{{response['videoinfo']['thumbnail']}}" alt="Video Thumbnail"></a>
+                    <div class="details">
+                        <h2><a href="https://youtube.com/watch?v={{response['videoinfo']['video_id']}}">{{ response['videoinfo']['title'] }}</a></h2>
                         <p>{{ response['videoinfo']['channel'] }}</p>
                         <p>{{ response['videoinfo']['description'] }}</p>
                     </div>
