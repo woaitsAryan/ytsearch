@@ -4,23 +4,28 @@ body {
 }
   #header {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
   }
-  
-  #header img {
-    height: 40px;
-    margin-right: 20px;
-  }
-  
+
   #search-form {
     display: flex;
-    align-items: center;
     width: 100%;
     max-width: 600px;
+    padding-left: 23%;
+    border-radius: 20px;  
   }
+.center{
   
+  margin: 0 auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+
   #search-form input[type="text"] {
     flex-grow: 1;
     font-size: 16px;
@@ -42,12 +47,14 @@ body {
   #search-form button[type="submit"]:hover {
     background-color: #d32f2f;
   }
+
   
   /* Video Results Styles */
   
   #results {
     margin: 20px auto;
-    max-width: 800px;
+    padding-top: 10px;
+    max-width: 1000px;
   }
   
   .video {
@@ -56,11 +63,11 @@ body {
   }
   
   .video a {
+    padding-bottom: 60px;
     display: block;
-    width: 160px;
-    height: 90px;
+    width: 400px;
+    height: 200px;
     margin-right: 20px;
-    overflow: hidden;
   }
   
   .video img {
@@ -73,12 +80,14 @@ body {
   
   .video h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 22px;
   }
   
   .video h2 a {
     color: #333;
     text-decoration: none;
+    height:40px;
+    padding-bottom: 40px;
   }
   
   .video h2 a:hover {
@@ -90,4 +99,12 @@ body {
     font-size: 14px;
     color: #666;
   }
+  .channel{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
   
+  .desc{
+    padding-bottom: 100px;
+  }

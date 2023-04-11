@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import cs50
 from fuzzywuzzy import fuzz
 
-db = cs50.SQL("sqlite:///appledb.db")
+db = cs50.SQL("sqlite:///videos.db")
 
 app = Flask(__name__)
 
@@ -16,7 +16,6 @@ def get_video():
     title = request.args.get('title')
     
     video = db.execute("SELECT * FROM videos WHERE title LIKE '%' || ? || '%' OR description LIKE '%' || ? || '%'", title, title)
-    print(video)
     
     fuzzyvideo = []
     
@@ -28,7 +27,6 @@ def get_video():
         fuzzyvideo.append(tempdict)
         
     fuzzyvideo.sort(key=lambda x: x['fuzzyscore'], reverse=True)
-    print(fuzzyvideo)
     
     return render_template('video.html', responses=fuzzyvideo)
 
