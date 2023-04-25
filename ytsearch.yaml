@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ytsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ytsearch
+  template:
+    metadata:
+      labels:
+        app: ytsearch
+    spec:
+      containers:
+      - name: ytsearch
+        image: woaitsaryan/ytsearch:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ytsearch
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: ytsearch
